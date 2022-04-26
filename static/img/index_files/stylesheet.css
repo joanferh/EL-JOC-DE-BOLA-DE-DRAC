@@ -1,0 +1,10 @@
+body {
+    background-image: url('../img/escenaritorneigtransparent.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h3 {
+    color:rgb(191, 8, 8);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif 
+}
