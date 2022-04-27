@@ -1464,7 +1464,7 @@ function avatar(){
         
 
         <button id="${nameAvatar}" class="btn" onclick=(sortejant(this.id))>
-            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="${urlphoto}" width="280" border="0">
+            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="${photoAvatar}" width="280" border="0">
         </button>    
         `
         //(quadreEliminatories(this.id))
