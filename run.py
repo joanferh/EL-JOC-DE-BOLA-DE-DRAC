@@ -3,7 +3,8 @@ import json
 from flask import request
 import pymysql
 import pymysql.cursors
-from flask import sshtunnel
+#import sshtunnel
+
 
 app = Flask(__name__)
 
@@ -12,7 +13,7 @@ if __name__ == "__main__":
 
 
 
-sshtunnel.SSH_TIMEOUT = 5.0
+'''sshtunnel.SSH_TIMEOUT = 5.0
 sshtunnel.TUNNEL_TIMEOUT = 5.0
 
 with sshtunnel.SSHTunnelForwarder(
@@ -36,12 +37,12 @@ print('adeu')
 
 
     # Do stuff
-    #connection.close()
+    #connection.close()'''
 
-def connectDatabase2():
+def connectDatabase():
     '''return pymysql.connect(host='localhost', user = 'root', password = '', database = 'diccionari')'''
-    return pymysql.connect(host='sql11.freemysqlhosting.net', user = 'sql11484420', password = 'L4yY5lt9Qu', database = 'sql11484420')
-    '''return pymysql.connect(host='yahabla.mysql.pythonanywhere-services.com', user = 'yahabla', password = 'L4yY5lt9Qu', database = 'yahabla$elgrantorneig')'''''
+    '''return pymysql.connect(host='sql11.freemysqlhosting.net', user = 'sql11484420', password = 'L4yY5lt9Qu', database = 'sql11484420')'''
+    return pymysql.connect(host='yahabla.mysql.pythonanywhere-services.com', user = 'yahabla', password = 'L4yY5lt9Qu', database = 'yahabla$elgrantorneig')
 
 
 @app.route('/')
