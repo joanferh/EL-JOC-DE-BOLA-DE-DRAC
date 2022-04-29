@@ -3,15 +3,44 @@ import json
 from flask import request
 import pymysql
 import pymysql.cursors
+import sshtunnel
 
 app = Flask(__name__)
 
 if __name__ == "__main__":
     app.run(debug=True)
 
+
+
+sshtunnel.SSH_TIMEOUT = 5.0
+sshtunnel.TUNNEL_TIMEOUT = 5.0
+
+with sshtunnel.SSHTunnelForwarder(
+    ('ssh.pythonanywhere.com'),
+    ssh_username='yahabla', ssh_password='43552114gGg.',
+    remote_bind_address=('yahabla.mysql.pythonanywhere-services.com', 3306)
+) as tunnel:
+    print('hola')
+    connection = pymysql.connect(
+        user='yahabla',
+        passwd='L4yY5lt9Qu',
+        host='yahabla.mysql.pythonanywhere-services.com',
+        db='yahabla$elgrantorneig',
+    
+)
+print(connection)
+
 def connectDatabase():
+    return connection
+
+    # Do stuff
+    #connection.close()
+
+def connectDatabase2():
     '''return pymysql.connect(host='localhost', user = 'root', password = '', database = 'diccionari')'''
     return pymysql.connect(host='sql11.freemysqlhosting.net', user = 'sql11484420', password = 'L4yY5lt9Qu', database = 'sql11484420')
+    '''return pymysql.connect(host='yahabla.mysql.pythonanywhere-services.com', user = 'yahabla', password = 'L4yY5lt9Qu', database = 'yahabla$elgrantorneig')'''''
+
 
 @app.route('/')
 def index():
