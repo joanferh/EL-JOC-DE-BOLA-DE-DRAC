@@ -15,44 +15,49 @@ def connectDatabase():
 
 @app.route('/')
 def index():
-    con=connectDatabase()
-    cursor=con.cursor()
-    sql = "SELECT * FROM scores"
-    #print(sql)
-    cursor.execute(sql)
-    allScores = cursor.fetchall()
-    con.commit()
-    con.close()
-    #print(cursor
-    print(allScores)
-    print(type(allScores))
+    try:
+        con=connectDatabase()
+        cursor=con.cursor()
+        sql = "SELECT * FROM scores"
+        #print(sql)
+        cursor.execute(sql)
+        allScores = cursor.fetchall()
+        con.commit()
+        cursor.close()
+        con.close()
+        #print(cursor
+        print(allScores)
+        print(type(allScores))
 
-    allScores=list(allScores)
-    #print(allScores[0][0])
-    #print(allScores[0])
-    print(type(allScores))
-    print(allScores)
-    print(allScores[0])
-    print(allScores[0][0])
+        allScores=list(allScores)
+        #print(allScores[0][0])
+        #print(allScores[0])
+        print(type(allScores))
+        print(allScores)
+        print(allScores[0])
+        print(allScores[0][0])
 
-    allscoresjson = []
-    print(type(allscoresjson))
-    for i in range(len(allScores)):
-        avatar = '"avatar":' + str('"' + allScores[i][1] + '"')
-        nom = '"nom":' + str('"' + allScores[i][2] + '"')
-        puntuacio = '"puntuacio":' + str(allScores[i][3])
-        seconds = '"seconds":' + str(allScores[i][4])
-        time = '"time":' + str('"' + allScores[i][5] + '"')
-        newScore = '{'+ avatar + ',' + nom + ',' + puntuacio + ',' + seconds + ',' + time +'}'
-        allscoresjson.append(newScore)
-    print(allscoresjson)
+        allscoresjson = []
+        print(type(allscoresjson))
+        for i in range(len(allScores)):
+            avatar = '"avatar":' + str('"' + allScores[i][1] + '"')
+            nom = '"nom":' + str('"' + allScores[i][2] + '"')
+            puntuacio = '"puntuacio":' + str(allScores[i][3])
+            seconds = '"seconds":' + str(allScores[i][4])
+            time = '"time":' + str('"' + allScores[i][5] + '"')
+            newScore = '{'+ avatar + ',' + nom + ',' + puntuacio + ',' + seconds + ',' + time +'}'
+            allscoresjson.append(newScore)
+        print(allscoresjson)
 
-    allScores= str(allscoresjson)
-    allScores=allScores.replace("'","")
-    #allScores=allScores.replace(")","}")
-    print(allScores)
+        allScores= str(allscoresjson)
+        allScores=allScores.replace("'","")
+        #allScores=allScores.replace(")","}")
+        print(allScores)
+        
+        return render_template('index.html', allScores=allScores)
     
-    return render_template('index.html', allScores=allScores)
+    except:
+        return render_template('404.html')
 
 
 @app.route('/videoyoutube')
@@ -83,8 +88,3 @@ def setBBDD():
     con.commit()
     con.close()
     return result
-
-'''@app.route('/getBBDD', methods=['GET'])
-def getBBDD():
-    pass'''
-

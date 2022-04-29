@@ -165,7 +165,8 @@ function landing(){
 
     <div class="d-grid gap-2">
         <div style="margin-left: auto; margin-right: auto; padding-top: 40px;">
-            <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >INSCRIPCIÓ AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+            <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >BENVINGUT AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+            <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >PARTICIPA-HI ARA!</a>
         </div>
     </div>
     
@@ -251,8 +252,12 @@ function landing(){
 
     document.getElementById('inscripcio').innerHTML = `
     <div class="d-grid gap-2">
-        <div style="margin-left: auto; margin-right: auto; padding-top: 40px;">
-            <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >INSCRIPCIÓ AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+        <div style="margin-left: auto; margin-right: auto; padding-top: 15px;">
+            <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >BENVINGUT AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+            <br>
+            <div style="padding-top:10px;">
+                <p class="text-center" ><a class="btn btn-danger btn-lg btn-block" onclick="humanPlayerName()">JUGAR</a></p>
+            </div>
         </div>
     </div>  
     `;
@@ -260,7 +265,7 @@ function landing(){
     document.getElementById('videofoto').innerHTML = `
 
     
-    <div class="img-responsive" >
+    <div class="img-responsive">
 
         <img src='/static/img/participantsgranplay.png'/>
 
@@ -392,10 +397,14 @@ function landingMyScores(){
 
         document.getElementById('inscripcio').innerHTML = `
         <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding-top: 40px;">
-                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >INSCRIPCIÓ AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+            <div style="margin-left: auto; margin-right: auto; padding-top: 15px;">
+                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >BENVINGUT AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+                <br>
+                <div style="padding-top:10px;">
+                    <p class="text-center" ><a class="btn btn-danger btn-lg btn-block" onclick="humanPlayerName()">JUGAR</a></p>
+                </div>
             </div>
-        </div>  
+        </div>    
         `;
     
         document.getElementById('videofoto').innerHTML = `
@@ -483,10 +492,14 @@ function landingMyScores(){
         
         document.getElementById('inscripcio').innerHTML = `
         <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding-top: 40px;">
-                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >INSCRIPCIÓ AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+            <div style="margin-left: auto; margin-right: auto; padding-top: 15px;">
+                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >BENVINGUT AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+                <br>
+                <div style="padding-top:10px;">
+                    <p class="text-center" ><a class="btn btn-danger btn-lg btn-block" onclick="humanPlayerName()">JUGAR</a></p>
+                </div>
             </div>
-        </div>  
+        </div>   
         `;
     
         document.getElementById('videofoto').innerHTML = `
@@ -590,10 +603,14 @@ function landingMyScores(){
 
         document.getElementById('inscripcio').innerHTML = `
         <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding-top: 40px;">
-                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >INSCRIPCIÓ AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+            <div style="margin-left: auto; margin-right: auto; padding-top: 15px;">
+                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >BENVINGUT AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+                <br>
+                <div style="padding-top:10px;">
+                    <p class="text-center" ><a class="btn btn-danger btn-lg btn-block" onclick="humanPlayerName()">JUGAR</a></p>
+                </div>
             </div>
-        </div>  
+        </div> 
         `;
     
         document.getElementById('videofoto').innerHTML = `
@@ -698,10 +715,14 @@ function landingMyScores(){
 
         document.getElementById('inscripcio').innerHTML = `
         <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding-top: 40px;">
-                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >INSCRIPCIÓ AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+            <div style="margin-left: auto; margin-right: auto; padding-top: 15px;">
+                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >BENVINGUT AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+                <br>
+                <div style="padding-top:10px;">
+                    <p class="text-center" ><a class="btn btn-danger btn-lg btn-block" onclick="humanPlayerName()">JUGAR</a></p>
+                </div>
             </div>
-        </div>  
+        </div>
         `;
     
         document.getElementById('videofoto').innerHTML = `
@@ -809,10 +830,14 @@ function landingMyScores(){
 
         document.getElementById('inscripcio').innerHTML = `
         <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding-top: 40px;">
-                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >INSCRIPCIÓ AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+            <div style="margin-left: auto; margin-right: auto; padding-top: 15px;">
+                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >BENVINGUT AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+                <br>
+                <div style="padding-top:10px;">
+                    <p class="text-center" ><a class="btn btn-danger btn-lg btn-block" onclick="humanPlayerName()">JUGAR</a></p>
+                </div>
             </div>
-        </div>  
+        </div>
         `;
     
         document.getElementById('videofoto').innerHTML = `
@@ -920,10 +945,14 @@ function landingMyScores(){
 
         document.getElementById('inscripcio').innerHTML = `
         <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding-top: 40px;">
-                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >INSCRIPCIÓ AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+            <div style="margin-left: auto; margin-right: auto; padding-top: 15px;">
+                <a class="btn btn-success btn-lg btn-block" onclick="humanPlayerName()" >BENVINGUT AL 21è TORNEIG DE LES ARTS MARCIALS</a>
+                <br>
+                <div style="padding-top:10px;">
+                    <p class="text-center" ><a class="btn btn-danger btn-lg btn-block" onclick="humanPlayerName()">JUGAR</a></p>
+                </div>
             </div>
-        </div>  
+        </div>
         `;
     
         document.getElementById('videofoto').innerHTML = `
