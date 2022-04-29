@@ -3,7 +3,7 @@ import json
 from flask import request
 import pymysql
 import pymysql.cursors
-import sshtunnel
+from flask import sshtunnel
 
 app = Flask(__name__)
 
