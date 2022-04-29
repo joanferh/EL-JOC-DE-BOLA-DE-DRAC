@@ -11,7 +11,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-'''
+
 sshtunnel.SSH_TIMEOUT = 5.0
 sshtunnel.TUNNEL_TIMEOUT = 5.0
 
@@ -21,15 +21,19 @@ with sshtunnel.SSHTunnelForwarder(
     remote_bind_address=('yahabla.mysql.pythonanywhere-services.com', 3306)
 ) as tunnel:
     print('hola')
-    connection = pymysql.connect(
-        user='yahabla',
-        passwd='L4yY5lt9Qu',
-        host='yahabla.mysql.pythonanywhere-services.com',
-        db='yahabla$elgrantorneig',
+    def connectDatabase():
+
+        return pymysql.connect(
+            user='yahabla',
+            passwd='L4yY5lt9Qu',
+            host='yahabla.mysql.pythonanywhere-services.com',
+            db='yahabla$elgrantorneig',
     
 )
-print(connection)
-'''
+print('adeu')
+
+
+
 
     # Do stuff
     #connection.close()
@@ -42,26 +46,8 @@ def connectDatabase2():
 
 @app.route('/')
 def index():
-    try:
-
-        sshtunnel.SSH_TIMEOUT = 5.0
-        sshtunnel.TUNNEL_TIMEOUT = 5.0
-
-        with sshtunnel.SSHTunnelForwarder(
-            ('ssh.pythonanywhere.com'),
-            ssh_username='yahabla', ssh_password='43552114gGg.',
-            remote_bind_address=('yahabla.mysql.pythonanywhere-services.com', 3306)
-        ) as tunnel:
-            print('hola')
-            con= pymysql.connect(
-                user='yahabla',
-                passwd='L4yY5lt9Qu',
-                host='yahabla.mysql.pythonanywhere-services.com',
-                db='yahabla$elgrantorneig',
-            
-        )
-
-
+    try:     
+        con=connectDatabase()
         cursor=con.cursor()
         sql = "SELECT * FROM scores"
         #print(sql)
