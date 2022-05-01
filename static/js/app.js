@@ -1037,9 +1037,8 @@ function fullScores(){
     stopClock();
     resetClock();
     score=0;
-
-    let contingut = document.getElementById('content');
     
+
     document.getElementById('level').innerHTML = ``;
     document.getElementById('score').innerHTML = ``;
     document.getElementById('inscripcio').innerHTML = ``;
@@ -1052,7 +1051,7 @@ function fullScores(){
     </div>
     `
     
-    contingut.innerHTML =``;
+    document.getElementById('content').innerHTML =``;
 
     let scoresList=[];
 
@@ -1112,7 +1111,7 @@ function fullScores(){
             
         
             
-            contingut.innerHTML +=`
+            document.getElementById('content').innerHTML +=`
             <div class="container">
                 <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                     <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1131,7 +1130,7 @@ function fullScores(){
                 </div>
             </div>`
         }
-        contingut.innerHTML +=`
+        document.getElementById('content').innerHTML +=`
     
         <div class="d-grid gap-2">
             <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
@@ -1216,7 +1215,7 @@ function fullScores(){
             if(scoresList[clave].repe === true){
                 console.log(scoresList[clave]);
                 console.log('repe es true');
-                contingut.innerHTML +=`
+                document.getElementById('content').innerHTML +=`
                     <div class="container">
                         <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                             <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1237,7 +1236,7 @@ function fullScores(){
 
             }else{
                 console.log('repe es fals')  
-                contingut.innerHTML +=`
+                document.getElementById('content').innerHTML +=`
                 <div class="container">
                     <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                         <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1260,7 +1259,7 @@ function fullScores(){
         }
 
     }   
-    contingut.innerHTML +=`
+    document.getElementById('content').innerHTML +=`
 
     <div class="d-grid gap-2">
         <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
@@ -1283,7 +1282,7 @@ function fullScores(){
         //console.log(avatar);
     
         
-        contingut.innerHTML +=`
+        document.getElementById('content').innerHTML +=`
         <div class="container">
             <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                 <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1302,7 +1301,7 @@ function fullScores(){
             </div>
         </div>`
     }
-    contingut.innerHTML +=`
+    document.getElementById('content').innerHTML +=`
 
         <div class="d-grid gap-2">
             <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
