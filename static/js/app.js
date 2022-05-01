@@ -1037,8 +1037,9 @@ function fullScores(){
     stopClock();
     resetClock();
     score=0;
-    
 
+    let contingut = document.getElementById('content');
+    
     document.getElementById('level').innerHTML = ``;
     document.getElementById('score').innerHTML = ``;
     document.getElementById('inscripcio').innerHTML = ``;
@@ -1051,7 +1052,7 @@ function fullScores(){
     </div>
     `
     
-    document.getElementById('content').innerHTML =``;
+    contingut.innerHTML =``;
 
     let scoresList=[];
 
@@ -1111,7 +1112,7 @@ function fullScores(){
             
         
             
-            document.getElementById('content').innerHTML +=`
+            contingut.innerHTML +=`
             <div class="container">
                 <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                     <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1130,7 +1131,7 @@ function fullScores(){
                 </div>
             </div>`
         }
-        document.getElementById('content').innerHTML +=`
+        contingut.innerHTML +=`
     
         <div class="d-grid gap-2">
             <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
@@ -1215,7 +1216,7 @@ function fullScores(){
             if(scoresList[clave].repe === true){
                 console.log(scoresList[clave]);
                 console.log('repe es true');
-                document.getElementById('content').innerHTML +=`
+                contingut.innerHTML +=`
                     <div class="container">
                         <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                             <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1236,7 +1237,7 @@ function fullScores(){
 
             }else{
                 console.log('repe es fals')  
-                document.getElementById('content').innerHTML +=`
+                contingut.innerHTML +=`
                 <div class="container">
                     <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                         <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1259,6 +1260,14 @@ function fullScores(){
         }
 
     }   
+    contingut.innerHTML +=`
+
+    <div class="d-grid gap-2">
+        <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
+            <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
+        </div>
+    </div> 
+    `
 }
     /*
     //CODI SNSE COLOREJAR ELS RESULTATS REPETITS A ALL SCORES I MY SCORES
@@ -1274,7 +1283,7 @@ function fullScores(){
         //console.log(avatar);
     
         
-        document.getElementById('content').innerHTML +=`
+        contingut.innerHTML +=`
         <div class="container">
             <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                 <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1293,14 +1302,14 @@ function fullScores(){
             </div>
         </div>`
     }
-    document.getElementById('content').innerHTML +=`
+    contingut.innerHTML +=`
 
-    <div class="d-grid gap-2">
-        <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-            <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
-        </div>
-    </div> 
-    `
+        <div class="d-grid gap-2">
+            <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
+                <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
+            </div>
+        </div> 
+        `
    
     */
 
