@@ -1074,7 +1074,7 @@ function fullScores(){
 
     console.log(scoresList);
 
-
+/*
     /////////////////////////////////// OBJECTIU: COLOREJAR ELS MEUS RESULTATS A LA LLISTA GENERAL///////////////////
     
     // RECUPEREM ELS SCORES DEL LOCAL STORAGE, ÉS A DIR, MY SCORES
@@ -1269,8 +1269,21 @@ function fullScores(){
     </div> 
     `
 }
-    /*
+    */
     //CODI SNSE COLOREJAR ELS RESULTATS REPETITS A ALL SCORES I MY SCORES
+    scoresList.sort ((a, b) => {
+        // Comparamos la propiedad puntuacio de scoresList.
+      
+        if (a.puntuacio < b.puntuacio) return 1;
+        if (a.puntuacio  > b.puntuacio ) return -1;
+        else {
+          // Si la propiedad puntuacio de scoresList es igual, ordenar por tiempo.
+      
+          if (a.seconds > b.seconds) return 1;
+          else if (a.seconds < b.seconds) return -1;
+          return 0;
+        }
+    })
 
     for(let i = 0; i < scoresList.length; i++){
         //console.log(tasks[i])
@@ -1309,9 +1322,8 @@ function fullScores(){
                 <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
             </div>
         </div> 
-        `
-   
-    */
+        `   
+}
 
 
 
