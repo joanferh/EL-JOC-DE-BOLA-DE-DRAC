@@ -1032,13 +1032,16 @@ function landingMyScores(){
 
 
 function fullScores(){
-    
+
+    let contingut = document.getElementById('content');
+
+    contingut.innerHTML =`
+    <div class="loader"></div>
+    `;  
 
     stopClock();
     resetClock();
     score=0;
-
-    let contingut = document.getElementById('content');
     
     document.getElementById('level').innerHTML = ``;
     document.getElementById('score').innerHTML = ``;
@@ -1051,15 +1054,8 @@ function fullScores(){
         <div style="margin-left: auto; margin-right: 40px; float:right; position:fixed; right:0; margin-top:20px;" class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</div>
     </div>
     `
-    
-    contingut.innerHTML =`
-    <div class="loader"></div>
-
-    `;
 
     let scoresList=[];
-
-
 
     // RECUPEREM LES DADES
     // ALLSCORES VE DE PHPMYADMIN, PER FER LA CLASSIFICACIÓ GLOBAL DE TOTS ELS JUGADORS. EL SELECT ES RECULL A RUN.PY, ES PASSA A INDEX.HTML AMB RENDER TEMPLATE,
