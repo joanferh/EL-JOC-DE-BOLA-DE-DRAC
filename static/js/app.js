@@ -1074,7 +1074,7 @@ function fullScores(){
 
     console.log(scoresList);
 
-/*
+
     /////////////////////////////////// OBJECTIU: COLOREJAR ELS MEUS RESULTATS A LA LLISTA GENERAL///////////////////
     
     // RECUPEREM ELS SCORES DEL LOCAL STORAGE, ÉS A DIR, MY SCORES
@@ -1269,7 +1269,7 @@ function fullScores(){
     </div> 
     `
 }
-    */
+    /*
     //CODI SNSE COLOREJAR ELS RESULTATS REPETITS A ALL SCORES I MY SCORES
     scoresList.sort ((a, b) => {
         // Comparamos la propiedad puntuacio de scoresList.
@@ -1304,9 +1304,9 @@ function fullScores(){
                 <table class='table table-hover'>
                     <tbody style='text-align: center;'>
                         <tr>
-                            <td align='center' style="width:15%"><h3>${position + 1}</h3></td>
-                            <td align='center' style="width:10%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
-                            <td align='center' style="width:30%"><h5>${nom}</h5></td>
+                            <td align='center' style="width:17%"><h3>${position + 1}</h3></td>
+                            <td align='center' style="width:9%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
+                            <td align='center' style="width:29%"><h5>${nom}</h5></td>
                             <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
                             <td align='center' style="width:24%"><h5>${time}</h5></td>
                         </tr>
@@ -1326,7 +1326,7 @@ function fullScores(){
         `
    
 }
-
+*/
 
 
 
