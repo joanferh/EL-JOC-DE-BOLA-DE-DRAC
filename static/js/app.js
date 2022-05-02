@@ -1074,7 +1074,7 @@ function fullScores(){
 
     console.log(scoresList);
 
-/*
+
     /////////////////////////////////// OBJECTIU: COLOREJAR ELS MEUS RESULTATS A LA LLISTA GENERAL///////////////////
     
     // RECUPEREM ELS SCORES DEL LOCAL STORAGE, ÉS A DIR, MY SCORES
@@ -1269,7 +1269,7 @@ function fullScores(){
     </div> 
     `
 }
-    */
+    /*
     //CODI SNSE COLOREJAR ELS RESULTATS REPETITS A ALL SCORES I MY SCORES
     scoresList.sort ((a, b) => {
         // Comparamos la propiedad puntuacio de scoresList.
@@ -1323,7 +1323,7 @@ function fullScores(){
             </div>
         </div> 
         `   
-}
+}*/
 
 
 
