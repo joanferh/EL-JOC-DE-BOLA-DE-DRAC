@@ -1074,7 +1074,7 @@ function fullScores(){
 
     console.log(scoresList);
 
-
+/*
     /////////////////////////////////// OBJECTIU: COLOREJAR ELS MEUS RESULTATS A LA LLISTA GENERAL///////////////////
     
     // RECUPEREM ELS SCORES DEL LOCAL STORAGE, ÉS A DIR, MY SCORES
@@ -1269,7 +1269,7 @@ function fullScores(){
     </div> 
     `
 }
-    /*
+    */
     //CODI SNSE COLOREJAR ELS RESULTATS REPETITS A ALL SCORES I MY SCORES
     scoresList.sort ((a, b) => {
         // Comparamos la propiedad puntuacio de scoresList.
@@ -1284,6 +1284,7 @@ function fullScores(){
           return 0;
         }
     })
+    
 
     for(let i = 0; i < scoresList.length; i++){
         //console.log(tasks[i])
@@ -1296,24 +1297,24 @@ function fullScores(){
         //console.log(avatar);
     
         
-        contingut.innerHTML +=`
-        <div class="container">
-            <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
-                <div class= "card" style="height: 4rem; width: 40rem;">
-                    <table class='table table-hover'>
-                        <tbody style='text-align: center;'>
-                            <tr>
-                                <td align='center' style="width:15%"><h3>${position + 1}</h3></td>
-                                <td align='center' style="width:10%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
-                                <td align='center' style="width:30%"><h5>${nom}</h5></td>
-                                <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
-                                <td align='center' style="width:24%"><h5>${time}</h5></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+    contingut.innerHTML +=`
+    <div class="container">
+        <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
+            <div class= "card" style="height: 4rem; width: 40rem;">
+                <table class='table table-hover'>
+                    <tbody style='text-align: center;'>
+                        <tr>
+                            <td align='center' style="width:15%"><h3>${position + 1}</h3></td>
+                            <td align='center' style="width:10%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
+                            <td align='center' style="width:30%"><h5>${nom}</h5></td>
+                            <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
+                            <td align='center' style="width:24%"><h5>${time}</h5></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>`
+        </div>
+    </div>`
     }
     contingut.innerHTML +=`
 
@@ -1322,8 +1323,9 @@ function fullScores(){
                 <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
             </div>
         </div> 
-        `   
-}*/
+        `
+   
+}
 
 
 
