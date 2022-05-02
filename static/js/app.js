@@ -1052,7 +1052,10 @@ function fullScores(){
     </div>
     `
     
-    contingut.innerHTML =``;
+    contingut.innerHTML =`
+    <div class="loader"></div>
+
+    `;
 
     let scoresList=[];
 
@@ -1268,6 +1271,13 @@ function fullScores(){
         </div>
     </div> 
     `
+
+    
+    $(document).ready(function() {
+        $(".loader").fadeOut("fast");
+    });
+
+    
 }
     /*
     //CODI SNSE COLOREJAR ELS RESULTATS REPETITS A ALL SCORES I MY SCORES
