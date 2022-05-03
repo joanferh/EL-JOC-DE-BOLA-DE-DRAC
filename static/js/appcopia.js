@@ -8,8 +8,6 @@ let timer;
 let tempsFinal;
 let minutesAndSeconds;
 let scoresBBDD;
-let position = 0;
-let comptador = 25;
 
 
 
@@ -92,9 +90,7 @@ function landing(){
     //goku.levelUp('lv2','lv2','lv2','lv2','lv2','lv2',);
     console.log(goku);
     console.log(level)
-    
-    position = 0;
-    comptador = 25;
+	
     score = 0;
     level = 1;
     participantsTots = [goku, krillin, jackieChun, yamcha, nam, bacterian, giran, ranfan];
@@ -1036,23 +1032,39 @@ function landingMyScores(){
 
 
 function fullScores(){
-
-   
     
-    /*contingut.innerHTML =`
+    contingut.innerHTML =`
     <div class="loader"></div>
     `;
         
     $(document).ready(function() {
         $(".loader").fadeOut("slow");
-    });*/
+    });
 
 
     stopClock();
     resetClock();
     score=0;
 
+    let contingut = document.getElementById('content');
+    
+    document.getElementById('level').innerHTML = ``;
+    document.getElementById('score').innerHTML = ``;
+    document.getElementById('inscripcio').innerHTML = ``;
+    document.getElementById('boxscores').innerHTML = ``;
+    document.getElementById('videofoto').innerHTML = ``;
+    document.getElementById('title').innerHTML = ` 
+    <div class="container">
+        <div style="margin-left: auto; margin-right: auto; float:left; padding-top:20px;  padding-bottom:10px; float:center;"><h3>ALL SCORES</h3></div>
+        <div style="margin-left: auto; margin-right: 40px; float:right; position:fixed; right:0; margin-top:20px;" class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</div>
+    </div>
+    `
+    
+
+
     let scoresList=[];
+
+
 
     // RECUPEREM LES DADES
     // ALLSCORES VE DE PHPMYADMIN, PER FER LA CLASSIFICACIÓ GLOBAL DE TOTS ELS JUGADORS. EL SELECT ES RECULL A RUN.PY, ES PASSA A INDEX.HTML AMB RENDER TEMPLATE,
@@ -1066,31 +1078,11 @@ function fullScores(){
     scoresList=JSON.parse(allScores)
     console.log(scoresList)
     console.log(typeof scoresList)
+
+
     console.log(scoresList);
-    lenScoresList = scoresList.length;
 
 
-
-
-    let contingut = document.getElementById('content');
-
-    document.getElementById('level').innerHTML = ``;
-    document.getElementById('score').innerHTML = ``;
-    document.getElementById('inscripcio').innerHTML = ``;
-    document.getElementById('boxscores').innerHTML = ``;
-    document.getElementById('videofoto').innerHTML = ``;
-    document.getElementById('title').innerHTML = ` 
-    <div class="container">
-        <div style="margin-left: auto; margin-right: auto; float:left; padding-top:20px;  padding-bottom:10px; float:center;"><h3>ALL SCORES: 1 - ${comptador} de ${lenScoresList}</h3> </div>
-        <div style="margin-left: auto; margin-right: 40px; float:right; position:fixed; right:0; margin-top:20px;" class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</div>
-    </div>
-    `
-    
-
-
-
-
-/*
     /////////////////////////////////// OBJECTIU: COLOREJAR ELS MEUS RESULTATS A LA LLISTA GENERAL///////////////////
     
     // RECUPEREM ELS SCORES DEL LOCAL STORAGE, ÉS A DIR, MY SCORES
@@ -1288,115 +1280,8 @@ function fullScores(){
 
 
     
-}*/
-    
-    //CODI SNSE COLOREJAR ELS RESULTATS REPETITS A ALL SCORES I MY SCORES
-    scoresList.sort ((a, b) => {
-        // Comparamos la propiedad puntuacio de scoresList.
-      
-        if (a.puntuacio < b.puntuacio) return 1;
-        if (a.puntuacio  > b.puntuacio ) return -1;
-        else {
-          // Si la propiedad puntuacio de scoresList es igual, ordenar por tiempo.
-      
-          if (a.seconds > b.seconds) return 1;
-          else if (a.seconds < b.seconds) return -1;
-          return 0;
-        }
-    })
-      
-
-    for(let i = position; i < comptador; i++){
-        //console.log(tasks[i])
-        position = i+1;
-        let avatar = scoresList[i].avatar;
-        let nom = scoresList[i].nom;
-        let puntuacio = scoresList[i].puntuacio;
-        let seconds = scoresList[i].seconds;
-        let time = scoresList[i].time;
-        //console.log(avatar);
-    
-        
-    contingut.innerHTML +=`
-    <div class="container">
-        <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
-            <div class= "card" style="height: 4rem; width: 40rem;">
-                <table class='table table-hover'>
-                    <tbody style='text-align: center;'>
-                        <tr>
-                            <td align='center' style="width:17%"><h3>${position}</h3></td>
-                            <td align='center' style="width:9%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
-                            <td align='center' style="width:29%"><h5>${nom}</h5></td>
-                            <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
-                            <td align='center' style="width:24%"><h5>${time}</h5></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>`
-    }
-    
-    console.log(position);
-
-    contingut.innerHTML +=`
-
-        <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                <img src='static/img/signomas.png' height="20px" onclick="addfullScores()">
-            </div>
-        </div>
-`
-
-    /*contingut.innerHTML +=`
-
-        <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
-            </div>
-        </div> 
-        `*/
-   
 }
-
-
-//--------------------------------------------------------------------------------------------------
-
-function addfullScores(){
-
-    score=0;
-    comptador += 25;
-
-    let contingut = document.getElementById('content');
-
-
-    document.getElementById('title').innerHTML = ` 
-    <div class="container">
-        <div style="margin-left: auto; margin-right: auto; float:left; padding-top:20px;  padding-bottom:10px; float:center;"><h3>ALL SCORES: 1 - ${comptador} de ${lenScoresList}</h3> </div>
-        <div style="margin-left: auto; margin-right: 40px; float:right; position:fixed; right:0; margin-top:20px;" class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</div>
-    </div>
-    `
-    let scoresList=[];
-
-
-
-    // RECUPEREM LES DADES
-    // ALLSCORES VE DE PHPMYADMIN, PER FER LA CLASSIFICACIÓ GLOBAL DE TOTS ELS JUGADORS. EL SELECT ES RECULL A RUN.PY, ES PASSA A INDEX.HTML AMB RENDER TEMPLATE,
-    // SE LI DONA FORMAT JSON, I ES PASSA A APP.JS AMB UN ID DE LABEL BUIT. UN COP A APP.JS, L'STRING ES CONVERTEIX A OBJECTE AMB JSON.PARSE
-
-    allScores = document.getElementById('allScores').getAttribute("value");
-    console.log(allScores)
-    console.log(typeof allScores)
-
-    // AQUÍ, A MÉS DE CONVERTIR-SE EN OBJECTE JSON, LI CANVIEM EL NOM A ALLSCORES PER DIR-SE SCORESLIST, QUE ÉS EL NOM DEFINIT PER AIXÒ DES DEL PRINCIPI, AMB LOCAL STORAGE
-    scoresList=JSON.parse(allScores)
-    console.log(scoresList)
-    console.log(typeof scoresList)
-
-
-    console.log(scoresList);
-
-    
+    /*
     //CODI SNSE COLOREJAR ELS RESULTATS REPETITS A ALL SCORES I MY SCORES
     scoresList.sort ((a, b) => {
         // Comparamos la propiedad puntuacio de scoresList.
@@ -1412,11 +1297,10 @@ function addfullScores(){
         }
     })
     
-    
 
-    for(let i = position; i < comptador; i++){
+    for(let i = 0; i < scoresList.length; i++){
         //console.log(tasks[i])
-        position = position+1;
+        let position = i;
         let avatar = scoresList[i].avatar;
         let nom = scoresList[i].nom;
         let puntuacio = scoresList[i].puntuacio;
@@ -1432,7 +1316,7 @@ function addfullScores(){
                 <table class='table table-hover'>
                     <tbody style='text-align: center;'>
                         <tr>
-                            <td align='center' style="width:17%"><h3>${position}</h3></td>
+                            <td align='center' style="width:17%"><h3>${position + 1}</h3></td>
                             <td align='center' style="width:9%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
                             <td align='center' style="width:29%"><h5>${nom}</h5></td>
                             <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
@@ -1444,35 +1328,17 @@ function addfullScores(){
         </div>
     </div>`
     }
-    
-    console.log(position);
-
     contingut.innerHTML +=`
-
-        <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                <img src='static/img/signomas.png' height="20px" onclick="addfullScores()">
-            </div>
-        </div>
-`
-
-    /*contingut.innerHTML +=`
 
         <div class="d-grid gap-2">
             <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
                 <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
             </div>
         </div> 
-        `*/
+        `
    
 }
-
-
-
-//--------------------------------------------------------------------------------------------------
-
-
-
+*/
 
 
 
@@ -1553,14 +1419,14 @@ function myFullScores(){
             </div>
         </div>`
     }
-    /*document.getElementById('content').innerHTML +=`
+    document.getElementById('content').innerHTML +=`
 
     <div class="d-grid gap-2">
         <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
             <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
         </div>
     </div> 
-    `*/
+    `
    
 }
 
