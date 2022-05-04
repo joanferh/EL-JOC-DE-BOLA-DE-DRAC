@@ -1567,7 +1567,7 @@ function addfullScores(scoresList){
 
         <div class="d-grid gap-2">
             <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoreList)">
+                <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
             </div>
         </div>
         `
