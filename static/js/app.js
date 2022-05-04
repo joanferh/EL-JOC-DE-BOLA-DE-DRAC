@@ -9,7 +9,7 @@ let tempsFinal;
 let minutesAndSeconds;
 let scoresBBDD;
 let position = 0;
-let comptador = 25;
+let comptador = 50;
 
 
 
@@ -94,7 +94,7 @@ function landing(){
     console.log(level)
     
     position = 0;
-    comptador = 25;
+    comptador = 50;
     score = 0;
     level = 1;
     participantsTots = [goku, krillin, jackieChun, yamcha, nam, bacterian, giran, ranfan];
@@ -1081,8 +1081,7 @@ function fullScores(){
     document.getElementById('videofoto').innerHTML = ``;
     document.getElementById('title').innerHTML = ` 
     <div class="container">
-        <div style="margin-left: auto; margin-right: auto; float:left; padding-top:20px;  padding-bottom:10px; float:center;"><h3>ALL SCORES: 1 - ${comptador} de ${lenScoresList}</h3> </div>
-        <div style="margin-left: auto; margin-right: 40px; float:right; position:fixed; right:0; margin-top:20px;" class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</div>
+        <div style="margin-left: auto; margin-right: auto; padding-top:20px;  padding-bottom:10px; float:center;"><h3>ALL SCORES: 1 - ${comptador} de ${lenScoresList}</h3> </div>
     </div>
     `
     
@@ -1364,16 +1363,16 @@ function fullScores(){
 
 function addfullScores(){
 
+
     score=0;
-    comptador += 25;
+    comptador += 50;
 
     let contingut = document.getElementById('content');
 
 
     document.getElementById('title').innerHTML = ` 
     <div class="container">
-        <div style="margin-left: auto; margin-right: auto; float:left; padding-top:20px;  padding-bottom:10px; float:center;"><h3>ALL SCORES: 1 - ${comptador} de ${lenScoresList}</h3> </div>
-        <div style="margin-left: auto; margin-right: 40px; float:right; position:fixed; right:0; margin-top:20px;" class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</div>
+        <div style="margin-left: auto; margin-right: auto; padding-top:20px;  padding-bottom:10px; float:center;"><h3>ALL SCORES: 1 - ${comptador} de ${lenScoresList}</h3> </div>
     </div>
     `
     let scoresList=[];
@@ -1493,8 +1492,7 @@ function myFullScores(){
     document.getElementById('videofoto').innerHTML = ``;
     document.getElementById('title').innerHTML = ` 
     <div class="container">
-        <div style="margin-left: auto; margin-right: auto; float:left; padding-top:20px;  padding-bottom:10px; float:center;"><h3>MY SCORES</h3></div>
-        <div style="margin-left: auto; margin-right: 40px; float:right; position:fixed; right:0; margin-top:20px;" class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</div>
+        <div style="margin-left: auto; margin-right: auto; padding-top:20px;  padding-bottom:10px; float:center;"><h3>MY SCORES</h3></div>
     </div>
 
     
