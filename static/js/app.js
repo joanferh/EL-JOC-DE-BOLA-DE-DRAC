@@ -1506,7 +1506,8 @@ function addfullScores(scoresList){
 
         // FINALMENT, ASSIGNEM VARIABLES A LES PROPIETATS DE SCORESLIST. SI REPE:TRUE, LI POSEM VERMELL DE BACKGROUND COLOR. SI ELSE (REPE:FALSE), EL DEIXEM EN BLANC
         */
-        
+        let nouContingut = '';
+
         for(let i = position; i < comptador; i++){
             //console.log(tasks[i])
             position = i+1;
@@ -1521,7 +1522,7 @@ function addfullScores(scoresList){
             if(scoresList[i].repe === true){
                 console.log(scoresList[i]);
                 console.log('repe es true');
-                contingut.innerHTML +=`
+                nouContingut +=`
                     <div class="container">
                         <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                             <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1542,7 +1543,7 @@ function addfullScores(scoresList){
 
             }else{
                 console.log('repe es fals')  
-                contingut.innerHTML +=`
+                nouContingut +=`
                 <div class="container">
                     <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                         <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1563,6 +1564,7 @@ function addfullScores(scoresList){
 
             }
         }
+        contingut.innerHTML += nouContingut;
         contingut.innerHTML +=`
 
         <div class="d-grid gap-2">
