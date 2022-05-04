@@ -1037,7 +1037,6 @@ function landingMyScores(){
 
 function fullScores(){
 
-   
     
     /*contingut.innerHTML =`
     <div class="loader"></div>
@@ -1345,6 +1344,8 @@ function fullScores(){
 
 
 function addfullScores(scoresList){
+    $("#loader").fadeIn("fast");
+
     console.log(scoresList);
 
 
@@ -1573,9 +1574,10 @@ function addfullScores(scoresList){
         contingut.innerHTML += nouContingut;
 
         if(position >= scoresList.length){
+            $("#loader").fadeOut("fast");
             return;
         }
-        
+
         contingut.innerHTML +=`
 
         <div class="d-grid gap-2">
@@ -1584,6 +1586,8 @@ function addfullScores(scoresList){
             </div>
         </div>
         `
+
+        $("#loader").fadeOut("fast");
     }
 }
 
