@@ -1089,7 +1089,7 @@ function fullScores(){
 
 
 
-/*
+
     /////////////////////////////////// OBJECTIU: COLOREJAR ELS MEUS RESULTATS A LA LLISTA GENERAL///////////////////
     
     // RECUPEREM ELS SCORES DEL LOCAL STORAGE, ÉS A DIR, MY SCORES
@@ -1215,21 +1215,21 @@ function fullScores(){
         })
 
         // FINALMENT, ASSIGNEM VARIABLES A LES PROPIETATS DE SCORESLIST. SI REPE:TRUE, LI POSEM VERMELL DE BACKGROUND COLOR. SI ELSE (REPE:FALSE), EL DEIXEM EN BLANC
-
-        let position = 0;
-        for(let clave in scoresList){
-            position += 1
-            console.log(position)
-            let avatar = scoresList[clave].avatar;
-            let nom = scoresList[clave].nom;
-            console.log(nom);
-            let puntuacio = scoresList[clave].puntuacio;
-            let seconds = scoresList[clave].seconds;
-            let time = scoresList[clave].time;
+        
+        
+        for(let i = position; i < comptador; i++){
+            //console.log(tasks[i])
+            position = i+1;
+            let avatar = scoresList[i].avatar;
+            let nom = scoresList[i].nom;
+            let puntuacio = scoresList[i].puntuacio;
+            let seconds = scoresList[i].seconds;
+            let time = scoresList[i].time;
+            //console.log(avatar);
 
             //console.log(clave);
-            if(scoresList[clave].repe === true){
-                console.log(scoresList[clave]);
+            if(scoresList[i].repe === true){
+                console.log(scoresList[i]);
                 console.log('repe es true');
                 contingut.innerHTML +=`
                     <div class="container">
@@ -1273,21 +1273,20 @@ function fullScores(){
 
             }
         }
+        contingut.innerHTML +=`
 
-    }   
-    contingut.innerHTML +=`
-
-    <div class="d-grid gap-2">
-        <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-            <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
+        <div class="d-grid gap-2">
+            <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
+                <img src='static/img/signomas.png' height="20px" onclick="addfullScores()">
+            </div>
         </div>
-    </div> 
-    `
+        `
+    }
+
+}   
 
 
-
-    
-}*/
+/*
     
     //CODI SNSE COLOREJAR ELS RESULTATS REPETITS A ALL SCORES I MY SCORES
     scoresList.sort ((a, b) => {
@@ -1345,21 +1344,11 @@ function fullScores(){
                 <img src='static/img/signomas.png' height="20px" onclick="addfullScores()">
             </div>
         </div>
-`
-
-    /*contingut.innerHTML +=`
-
-        <div class="d-grid gap-2">
-            <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
-            </div>
-        </div> 
-        `*/
+        `
    
-}
+}*/
 
 
-//--------------------------------------------------------------------------------------------------
 
 function addfullScores(){
 
@@ -1465,14 +1454,6 @@ function addfullScores(){
         `*/
    
 }
-
-
-
-//--------------------------------------------------------------------------------------------------
-
-
-
-
 
 
 
