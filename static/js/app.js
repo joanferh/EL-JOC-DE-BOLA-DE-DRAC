@@ -1569,6 +1569,9 @@ function addfullScores(scoresList){
 
             }
         }
+        if(position > scoresList.length){
+            return;
+        }
         contingut.innerHTML += nouContingut;
         contingut.innerHTML +=`
 
