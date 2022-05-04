@@ -1569,7 +1569,7 @@ function addfullScores(scoresList){
 
             }
         }
-        if(position > scoresList.length){
+        if(position >= scoresList.length){
             return;
         }
         contingut.innerHTML += nouContingut;
