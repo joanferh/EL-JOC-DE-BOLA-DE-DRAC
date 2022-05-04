@@ -1052,7 +1052,7 @@ function fullScores(){
     resetClock();
     score=0;
 
-    let scoresList=[];
+    //let scoresList=[];
 
     // RECUPEREM LES DADES
     // ALLSCORES VE DE PHPMYADMIN, PER FER LA CLASSIFICACIÓ GLOBAL DE TOTS ELS JUGADORS. EL SELECT ES RECULL A RUN.PY, ES PASSA A INDEX.HTML AMB RENDER TEMPLATE,
@@ -1069,9 +1069,6 @@ function fullScores(){
     console.log(scoresList);
     lenScoresList = scoresList.length;
 
-
-
-
     let contingut = document.getElementById('content');
 
     document.getElementById('level').innerHTML = ``;
@@ -1085,9 +1082,6 @@ function fullScores(){
     </div>
     `
     
-
-
-
 
 
     /////////////////////////////////// OBJECTIU: COLOREJAR ELS MEUS RESULTATS A LA LLISTA GENERAL///////////////////
@@ -1277,7 +1271,7 @@ function fullScores(){
 
         <div class="d-grid gap-2">
             <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                <img src='static/img/signomas.png' height="20px" onclick="addfullScores()">
+                <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
             </div>
         </div>
         `
@@ -1350,7 +1344,8 @@ function fullScores(){
 
 
 
-function addfullScores(){
+function addfullScores(scoresList){
+    console.log(scoresList);
 
 
     score=0;
@@ -1364,14 +1359,14 @@ function addfullScores(){
         <div style="margin-left: auto; margin-right: auto; padding-top:20px;  padding-bottom:10px; float:center;"><h3>ALL SCORES: 1 - ${comptador} de ${lenScoresList}</h3> </div>
     </div>
     `
-    let scoresList=[];
+
 
 
 
     // RECUPEREM LES DADES
     // ALLSCORES VE DE PHPMYADMIN, PER FER LA CLASSIFICACIÓ GLOBAL DE TOTS ELS JUGADORS. EL SELECT ES RECULL A RUN.PY, ES PASSA A INDEX.HTML AMB RENDER TEMPLATE,
     // SE LI DONA FORMAT JSON, I ES PASSA A APP.JS AMB UN ID DE LABEL BUIT. UN COP A APP.JS, L'STRING ES CONVERTEIX A OBJECTE AMB JSON.PARSE
-
+    /*
     allScores = document.getElementById('allScores').getAttribute("value");
     console.log(allScores)
     console.log(typeof allScores)
@@ -1405,7 +1400,7 @@ function addfullScores(){
     })
 
     console.log(scoresList);
-    console.log(scoresListLocalStorage);
+    console.log(scoresListLocalStorage);*/
 
     // SI SCORESLISTLCCALSTORAGE ESTÀ BUIT, ÉS A DIR, ÉS NULL, IMPRIMIM LA LLISTA SENSE COLOREJAR, NOMÉS AGAFANT LA BBDD DE SCORSELIST
 
@@ -1454,7 +1449,7 @@ function addfullScores(){
     }else{
 
         // TANT A SCORELIST COM A SCORELISTLOCALSTORAGE LI AFEGIM LA PROPIETAT REPE:FALSE
-
+        /*
         for(let i = 0; i < scoresList.length; i++){
             scoresList[i].repe=false;    
         }
@@ -1510,7 +1505,7 @@ function addfullScores(){
         })
 
         // FINALMENT, ASSIGNEM VARIABLES A LES PROPIETATS DE SCORESLIST. SI REPE:TRUE, LI POSEM VERMELL DE BACKGROUND COLOR. SI ELSE (REPE:FALSE), EL DEIXEM EN BLANC
-        
+        */
         
         for(let i = position; i < comptador; i++){
             //console.log(tasks[i])
