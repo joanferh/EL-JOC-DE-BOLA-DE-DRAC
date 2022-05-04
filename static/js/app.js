@@ -1569,10 +1569,13 @@ function addfullScores(scoresList){
 
             }
         }
+        
+        contingut.innerHTML += nouContingut;
+
         if(position >= scoresList.length){
             return;
         }
-        contingut.innerHTML += nouContingut;
+        
         contingut.innerHTML +=`
 
         <div class="d-grid gap-2">
