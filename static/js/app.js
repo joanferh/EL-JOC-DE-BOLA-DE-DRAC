@@ -1509,6 +1509,11 @@ function addfullScores(scoresList){
         let nouContingut = '';
 
         for(let i = position; i < comptador; i++){
+            
+            if(scoresList[i]==undefined){
+                break;
+            }
+
             //console.log(tasks[i])
             position = i+1;
             let avatar = scoresList[i].avatar;
