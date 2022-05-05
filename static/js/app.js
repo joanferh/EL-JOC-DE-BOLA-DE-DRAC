@@ -1429,6 +1429,8 @@ function addfullScores(scoresList){
 
     // SI SCORESLISTLOCALSTORAGE ESTÀ BUIT, ÉS A DIR, ÉS NULL, IMPRIMIM LA LLISTA SENSE COLOREJAR, NOMÉS AGAFANT LA BBDD DE SCORSELIST
 
+    let nouContingut = '';
+
     if(scoresListLocalStorage === null){
         console.log(position);
         for(let i = position; i < comptador; i++){
@@ -1446,7 +1448,7 @@ function addfullScores(scoresList){
             
         
             
-            contingut.innerHTML +=`
+            nouContingut +=`
             <div class="container">
                 <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                     <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1465,6 +1467,8 @@ function addfullScores(scoresList){
                 </div>
             </div>`
         }
+
+        contingut.innerHTML += nouContingut;
 
         if(position >= scoresList.length){
             $("#loader").fadeOut("fast");
