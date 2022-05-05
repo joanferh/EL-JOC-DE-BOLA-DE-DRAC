@@ -1046,6 +1046,8 @@ function fullScores(){
         $(".loader").fadeOut("slow");
     });*/
 
+    $("#loader").fadeIn("fast");
+
 
     stopClock();
     resetClock();
@@ -1275,6 +1277,7 @@ function fullScores(){
         </div>
         `
     }
+    $("#loader").fadeOut("fast");
 
 }   
 
