@@ -1110,9 +1110,12 @@ function fullScores(){
     // SI SCORESLISTLCCALSTORAGE ESTÀ BUIT, ÉS A DIR, ÉS NULL, IMPRIMIM LA LLISTA SENSE COLOREJAR, NOMÉS AGAFANT LA BBDD DE SCORSELIST
 
     if(scoresListLocalStorage === null){
+
+        let nouContingut=''; // CREEM UNA VARIABLE PER GUARDAR EL BUCLE DE HTML, SENSE FER SERVIR INNERHTML (I NO SOBRECARREGAR EL SERVIDOR)
+
         for(let i = position; i < comptador; i++){
             //console.log(tasks[i])
-            let position = i;
+            position = i+1;
             let avatar = scoresList[i].avatar;
             let nom = scoresList[i].nom;
             let puntuacio = scoresList[i].puntuacio;
@@ -1121,15 +1124,15 @@ function fullScores(){
             //console.log(avatar);
             
         
-            
-            contingut.innerHTML +=`
+            // GUARDEM EL BUCLE DE HTML, SENSE FER SERVIR INNERHTML (I NO SOBRECARREGAR EL SERVIDOR). EL GUARDEM A LA VARIABLE NOUCONTINGUT
+            nouContingut +=` 
             <div class="container">
                 <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                     <div class= "card" style="height: 4rem; width: 40rem;">
                         <table class='table table-hover'>
                             <tbody style='text-align: center;'>
                                 <tr>
-                                    <td align='center' style="width:17%"><h3>${position + 1}</h3></td>
+                                    <td align='center' style="width:17%"><h3>${position}</h3></td>
                                     <td align='center' style="width:9%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
                                     <td align='center' style="width:29%"><h5>${nom}</h5></td>
                                     <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
@@ -1140,15 +1143,26 @@ function fullScores(){
                     </div>
                 </div>
             </div>`
+
+
         }
+        console.log(position)
+        
+
+        contingut.innerHTML += nouContingut; //ARA SÍ, CONNECTEM AMB INNERHTML A INDEX.HTML I LI PASSEM LA VARIABLE NOUCONTINGUT, QUE CONTÉ TOT EL BUCLE HTML QUE HEM GUARDAT AL BUCLE DE DALT
+        
+
+
         contingut.innerHTML +=`
-    
+
         <div class="d-grid gap-2">
             <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
+                <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
             </div>
-        </div> 
-        `   
+        </div>
+        `
+
+        $("#loader").fadeOut("fast"); // FEM SORTIR L'EFECTE LOADER AMB JQUERY
 
         
     }else{
@@ -1211,7 +1225,10 @@ function fullScores(){
 
         // FINALMENT, ASSIGNEM VARIABLES A LES PROPIETATS DE SCORESLIST. SI REPE:TRUE, LI POSEM VERMELL DE BACKGROUND COLOR. SI ELSE (REPE:FALSE), EL DEIXEM EN BLANC
         
-        
+        console.log(position);
+
+        let nouContingut = '';
+
         for(let i = position; i < comptador; i++){
             //console.log(tasks[i])
             position = i+1;
@@ -1222,11 +1239,11 @@ function fullScores(){
             let time = scoresList[i].time;
             //console.log(avatar);
 
-            //console.log(clave);
+            // GUARDEM EL BUCLE DE HTML, SENSE FER SERVIR INNERHTML (I NO SOBRECARREGAR EL SERVIDOR). EL GUARDEM A LA VARIABLE NOUCONTINGUT
             if(scoresList[i].repe === true){
                 console.log(scoresList[i]);
                 console.log('repe es true');
-                contingut.innerHTML +=`
+                nouContingut +=`
                     <div class="container">
                         <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                             <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1247,7 +1264,7 @@ function fullScores(){
 
             }else{
                 console.log('repe es fals')  
-                contingut.innerHTML +=`
+                nouContingut +=`
                 <div class="container">
                     <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
                         <div class= "card" style="height: 4rem; width: 40rem;">
@@ -1268,6 +1285,11 @@ function fullScores(){
 
             }
         }
+        console.log(nouContingut);
+        console.log(position)
+
+        contingut.innerHTML += nouContingut; //ARA SÍ, CONNECTEM AMB INNERHTML A INDEX.HTML I LI PASSEM LA VARIABLE NOUCONTINGUT, QUE CONTÉ TOT EL BUCLE HTML QUE HEM GUARDAT AL BUCLE DE DALT
+
         contingut.innerHTML +=`
 
         <div class="d-grid gap-2">
@@ -1276,9 +1298,8 @@ function fullScores(){
             </div>
         </div>
         `
+        $("#loader").fadeOut("fast");
     }
-    $("#loader").fadeOut("fast");
-
 }   
 
 
@@ -1350,7 +1371,7 @@ function addfullScores(scoresList){
     $("#loader").fadeIn("fast");
 
     console.log(scoresList);
-
+    console.log(position);
 
     score=0;
     comptador += 50;
@@ -1406,12 +1427,16 @@ function addfullScores(scoresList){
     console.log(scoresList);
     console.log(scoresListLocalStorage);*/
 
-    // SI SCORESLISTLCCALSTORAGE ESTÀ BUIT, ÉS A DIR, ÉS NULL, IMPRIMIM LA LLISTA SENSE COLOREJAR, NOMÉS AGAFANT LA BBDD DE SCORSELIST
+    // SI SCORESLISTLOCALSTORAGE ESTÀ BUIT, ÉS A DIR, ÉS NULL, IMPRIMIM LA LLISTA SENSE COLOREJAR, NOMÉS AGAFANT LA BBDD DE SCORSELIST
 
     if(scoresListLocalStorage === null){
+        console.log(position);
         for(let i = position; i < comptador; i++){
+            if(scoresList[i]==undefined){
+                break;
+            }
             //console.log(tasks[i])
-            let position = i;
+            position = i+1;
             let avatar = scoresList[i].avatar;
             let nom = scoresList[i].nom;
             let puntuacio = scoresList[i].puntuacio;
@@ -1428,7 +1453,7 @@ function addfullScores(scoresList){
                         <table class='table table-hover'>
                             <tbody style='text-align: center;'>
                                 <tr>
-                                    <td align='center' style="width:17%"><h3>${position + 1}</h3></td>
+                                    <td align='center' style="width:17%"><h3>${position}</h3></td>
                                     <td align='center' style="width:9%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
                                     <td align='center' style="width:29%"><h5>${nom}</h5></td>
                                     <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
@@ -1440,15 +1465,21 @@ function addfullScores(scoresList){
                 </div>
             </div>`
         }
+
+        if(position >= scoresList.length){
+            $("#loader").fadeOut("fast");
+            return;
+        }
         contingut.innerHTML +=`
-    
+
         <div class="d-grid gap-2">
             <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                <a class="btn btn-success btn-lg btn-block" onclick="landing()" >INICI</a>
+                <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
             </div>
-        </div> 
-        `   
+        </div>
+        `
 
+        $("#loader").fadeOut("fast"); // FEM SORTIR L'EFECTE LOADER AMB JQUERY
         
     }else{
 
@@ -1513,6 +1544,7 @@ function addfullScores(scoresList){
         let nouContingut = '';
 
         for(let i = position; i < comptador; i++){
+            console.log(position);
             
             if(scoresList[i]==undefined){
                 break;
