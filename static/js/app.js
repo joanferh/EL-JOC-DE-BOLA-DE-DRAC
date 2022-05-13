@@ -87,11 +87,11 @@ function landing(){
     
     stopClock();
     resetClock();	
-    console.log(goku);
-    console.log(goku.pregunta1);
+    //console.log(goku);
+    //console.log(goku.pregunta1);
     //goku.levelUp('lv2','lv2','lv2','lv2','lv2','lv2',);
-    console.log(goku);
-    console.log(level)
+    //console.log(goku);
+    //console.log(level)
     
     position = 0;
     comptador = 50;
@@ -99,18 +99,18 @@ function landing(){
     level = 1;
     participantsTots = [goku, krillin, jackieChun, yamcha, nam, bacterian, giran, ranfan];
     participantsBarrejats = [];
-    console.log('ok');
+    //console.log('ok');
 
     // ALLSCORES VE DE PHPMYADMIN, PER FER LA CLASSIFICACIÓ GLOBAL DE TOTS ELS JUGADORS. EL SELECT ES RECULL A RUN.PY, ES PASSA A INDEX.HTML AMB RENDER TEMPLATE,
     // SE LI DONA FORMAT JSON, I ES PASSA A APP.JS AMB UN ID DE LABEL BUIT. UN COP A APP.JS, L'ESTRING ES CONVERTEIX A OBJECTE AMB JSON.PARSE
 
     allScores = document.getElementById('allScores').getAttribute("value");
-    console.log(allScores)
-    console.log(typeof allScores)
+    //console.log(allScores)
+    //console.log(typeof allScores)
     // AQUÍ, A MÉS DE CONVERTIR-SE EN OBJECTE JSON, LI CANVIEM EL NOM A ALLSCORES PER DIR-SE SCORESLIST, QUE ÉS EL NOM DEFINIT PER AIXÒ DES DEL PRINCIPI, AMB LOCAL STORAGE
     scoresList=JSON.parse(allScores)
-    console.log(scoresList)
-    console.log(typeof scoresList)
+    //console.log(scoresList)
+    //console.log(typeof scoresList)
   
 
 
@@ -147,13 +147,13 @@ function landing(){
       })
 
 
-    console.log(scoresList);
+    //console.log(scoresList);
 
 
 
     let primerClassificat = scoresList[0];
-    console.log(primerClassificat);
-    console.log(primerClassificat.nom);    
+    //console.log(primerClassificat);
+    //console.log(primerClassificat.nom);    
     let segonClassificat = scoresList[1];
     let tercerClassificat = scoresList[2];
     let quartClassificat = scoresList[3];
@@ -348,17 +348,17 @@ function landingMyScores(){
 
     stopClock();
     resetClock();	
-    console.log(goku);
-    console.log(goku.pregunta1);
+    //console.log(goku);
+    //console.log(goku.pregunta1);
     //goku.levelUp('lv2','lv2','lv2','lv2','lv2','lv2',);
-    console.log(goku);
-    console.log(level)
+    //console.log(goku);
+    //console.log(level)
 	
     score = 0;
     level = 1;
     participantsTots = [goku, krillin, jackieChun, yamcha, nam, bacterian, giran, ranfan];
     participantsBarrejats = [];
-    console.log('ok');
+    //console.log('ok');
 
     // ALLSCORES VE DE PHPMYADMIN, PER FER LA CLASSIFICACIÓ GLOBAL DE TOTS ELS JUGADORS. EL SELECT ES RECULL A RUN.PY, ES PASSA A INDEX.HTML AMB RENDER TEMPLATE,
     // SE LI DONA FORMAT JSON, I ES PASSA A APP.JS AMB UN ID DE LABEL BUIT. UN COP A APP.JS, L'ESTRING ES CONVERTEIX A OBJECTE AMB JSON.PARSE
@@ -376,11 +376,11 @@ function landingMyScores(){
     // LOCALSTORAGE, PER ACONSEGUIR LES PUTUACIONS NOMÉS DEL JUGADOR
 
     scoresList =  localStorage.getItem('scoresList')
-    console.log(typeof allScores)
+    //console.log(typeof allScores)
     
-    console.log(scoresList);
+    //console.log(scoresList);
     scoresList = JSON.parse(scoresList);
-    console.log(scoresList);
+    //console.log(scoresList);
     
     //console.log(scoresList.length);
 
@@ -393,7 +393,7 @@ function landingMyScores(){
 
  
     if(scoresList == null){    
-        console.log('null');  
+        //console.log('null');  
         document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
         document.getElementById('score').innerHTML = ` SCORE: ${score}`;
         document.getElementById('title').innerHTML = ``;
@@ -485,7 +485,7 @@ function landingMyScores(){
     }else if(scoresList.length == 1){
 
         let primerClassificat = scoresList[0];
-        console.log('prova')
+        //console.log('prova')
 
 
         document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
@@ -597,7 +597,7 @@ function landingMyScores(){
 
         let primerClassificat = scoresList[0];
         let segonClassificat = scoresList[1];
-        console.log('prova')
+        //console.log('prova')
 
 
         document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
@@ -709,7 +709,7 @@ function landingMyScores(){
         let primerClassificat = scoresList[0];
         let segonClassificat = scoresList[1];
         let tercerClassificat = scoresList[2];
-        console.log('prova')
+        //console.log('prova')
 
 
         document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
@@ -823,7 +823,7 @@ function landingMyScores(){
         let tercerClassificat = scoresList[2];
         let quartClassificat = scoresList[3];
         let cinqueClassificat = scoresList[4];
-        console.log('prova')
+        //console.log('prova')
 
 
         document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
@@ -938,7 +938,7 @@ function landingMyScores(){
         let tercerClassificat = scoresList[2];
         let quartClassificat = scoresList[3];
         let cinqueClassificat = scoresList[4];
-        console.log('prova')
+        //console.log('prova')
 
 
         document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
@@ -1060,14 +1060,14 @@ function fullScores(){
     // SE LI DONA FORMAT JSON, I ES PASSA A APP.JS AMB UN ID DE LABEL BUIT. UN COP A APP.JS, L'STRING ES CONVERTEIX A OBJECTE AMB JSON.PARSE
 
     allScores = document.getElementById('allScores').getAttribute("value");
-    console.log(allScores)
-    console.log(typeof allScores)
+    //console.log(allScores)
+    //console.log(typeof allScores)
 
     // AQUÍ, A MÉS DE CONVERTIR-SE EN OBJECTE JSON, LI CANVIEM EL NOM A ALLSCORES PER DIR-SE SCORESLIST, QUE ÉS EL NOM DEFINIT PER AIXÒ DES DEL PRINCIPI, AMB LOCAL STORAGE
     scoresList=JSON.parse(allScores)
-    console.log(scoresList)
-    console.log(typeof scoresList)
-    console.log(scoresList);
+    //console.log(scoresList)
+    //console.log(typeof scoresList)
+    //console.log(scoresList);
     lenScoresList = scoresList.length;
 
     let contingut = document.getElementById('content');
@@ -1104,8 +1104,8 @@ function fullScores(){
         }
     })
 
-    console.log(scoresList);
-    console.log(scoresListLocalStorage);
+    //console.log(scoresList);
+    //console.log(scoresListLocalStorage);
 
     // SI SCORESLISTLCCALSTORAGE ESTÀ BUIT, ÉS A DIR, ÉS NULL, IMPRIMIM LA LLISTA SENSE COLOREJAR, NOMÉS AGAFANT LA BBDD DE SCORSELIST
 
@@ -1146,7 +1146,7 @@ function fullScores(){
 
 
         }
-        console.log(position)
+        //console.log(position)
         
 
         contingut.innerHTML += nouContingut; //ARA SÍ, CONNECTEM AMB INNERHTML A INDEX.HTML I LI PASSEM LA VARIABLE NOUCONTINGUT, QUE CONTÉ TOT EL BUCLE HTML QUE HEM GUARDAT AL BUCLE DE DALT
@@ -1172,13 +1172,13 @@ function fullScores(){
         for(let i = 0; i < scoresList.length; i++){
             scoresList[i].repe=false;    
         }
-        console.log(scoresList);
+        //console.log(scoresList);
 
         for(let j = 0; j < scoresListLocalStorage.length; j++){
             scoresListLocalStorage[j].repe=false;
         }
 
-        console.log(scoresListLocalStorage);
+        //console.log(scoresListLocalStorage);
 
 
         //AGAFEM ELS VALORS DELS DOS OBJECTES
@@ -1241,8 +1241,8 @@ function fullScores(){
 
             // GUARDEM EL BUCLE DE HTML, SENSE FER SERVIR INNERHTML (I NO SOBRECARREGAR EL SERVIDOR). EL GUARDEM A LA VARIABLE NOUCONTINGUT
             if(scoresList[i].repe === true){
-                console.log(scoresList[i]);
-                console.log('repe es true');
+                //console.log(scoresList[i]);
+                //console.log('repe es true');
                 nouContingut +=`
                     <div class="container">
                         <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
@@ -1263,7 +1263,7 @@ function fullScores(){
                     </div>`
 
             }else{
-                console.log('repe es fals')  
+                //console.log('repe es fals')  
                 nouContingut +=`
                 <div class="container">
                     <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
@@ -1285,8 +1285,8 @@ function fullScores(){
 
             }
         }
-        console.log(nouContingut);
-        console.log(position)
+        //console.log(nouContingut);
+        //console.log(position)
 
         contingut.innerHTML += nouContingut; //ARA SÍ, CONNECTEM AMB INNERHTML A INDEX.HTML I LI PASSEM LA VARIABLE NOUCONTINGUT, QUE CONTÉ TOT EL BUCLE HTML QUE HEM GUARDAT AL BUCLE DE DALT
 
@@ -1370,8 +1370,8 @@ function fullScores(){
 function addfullScores(scoresList){
     $("#loader").fadeIn("fast");
 
-    console.log(scoresList);
-    console.log(position);
+    //console.log(scoresList);
+    //console.log(position);
 
     score=0;
     comptador += 50;
@@ -1432,7 +1432,7 @@ function addfullScores(scoresList){
     let nouContingut = '';
 
     if(scoresListLocalStorage === null){
-        console.log(position);
+        //console.log(position);
         for(let i = position; i < comptador; i++){
             if(scoresList[i]==undefined){
                 break;
@@ -1548,7 +1548,7 @@ function addfullScores(scoresList){
         let nouContingut = '';
 
         for(let i = position; i < comptador; i++){
-            console.log(position);
+            //console.log(position);
             
             if(scoresList[i]==undefined){
                 break;
@@ -1565,8 +1565,8 @@ function addfullScores(scoresList){
 
             //console.log(clave);
             if(scoresList[i].repe === true){
-                console.log(scoresList[i]);
-                console.log('repe es true');
+                //console.log(scoresList[i]);
+                //console.log('repe es true');
                 nouContingut +=`
                     <div class="container">
                         <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
@@ -1587,7 +1587,7 @@ function addfullScores(scoresList){
                     </div>`
 
             }else{
-                console.log('repe es fals')  
+                //console.log('repe es fals')  
                 nouContingut +=`
                 <div class="container">
                     <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
@@ -1739,7 +1739,7 @@ function myFullScores(){
     })
 
 
-    console.log(scoresList);
+    //console.log(scoresList);
 
     for(let i = 0; i < scoresList.length; i++){
         //console.log(tasks[i])
@@ -1818,7 +1818,7 @@ function humanPlayerName(){
             </div>
         </div>    
         `
-    console.log(humanNamePlayer)
+    //console.log(humanNamePlayer)
 }
 
 //document.getElementById('inscripcio').addEventListener('submit', humanPlayerName);
@@ -1845,7 +1845,7 @@ function avatar(){
     document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
     document.getElementById('score').innerHTML = `SCORE: ${score}`;
 
-    console.log(humanNamePlayer);    
+    //console.log(humanNamePlayer);    
 
     if(humanNamePlayer.length == 0){
         if(document.getElementById('humanNamePlayer').value.length == 0){
@@ -1855,7 +1855,7 @@ function avatar(){
         humanNamePlayer = document.getElementById('humanNamePlayer').value;
         }
     }
-    console.log(humanNamePlayer);
+    //console.log(humanNamePlayer);
     
     document.getElementById('content').innerHTML=`
 
@@ -1936,23 +1936,23 @@ function quadreEliminatories(nameAvatar){
     localStorage.setItem('arxiuInfoUsuari', JSON.stringify(arxiuInfoUsuari))
 
     //TREU DE LA LLISTA EL PERSONATGE QUE HA ESCOLLIT L'USUARI, PERQUÈ NO ES PUGUI ENFRONTAR A ELL
-    console.log(participantsTots);
-    console.log(nameAvatar);
+    //console.log(participantsTots);
+    //console.log(nameAvatar);
     participantsTots = participantsTots.filter((item) => item.nom !== nameAvatar);
    
     
     // BARREJA ALEATORIAMENT ELS OBJECTES DELS PERSONATGES
     participantsBarrejats = participantsTots.sort((a, b) => 0.5 - Math.random());
-    console.log(participantsBarrejats);
+    //console.log(participantsBarrejats);
 
     //console.log(participantsBarrejats[0].nom)
     //console.log(goku.infoPersonatge)
 
     //ASSIGNA PLAYERS SEGONS SORTEIG DE participantsBarrejats
     player1 = participantsBarrejats[0];
-    console.log(player1.nom);
-    console.log(player1.resposta1);
-    console.log(player1.respostacorrecte1);
+    //console.log(player1.nom);
+    //console.log(player1.resposta1);
+    //console.log(player1.respostacorrecte1);
     player2 = participantsBarrejats[1];
     player3 = participantsBarrejats[2];
     player4 = participantsBarrejats[3];
@@ -1962,14 +1962,14 @@ function quadreEliminatories(nameAvatar){
 
 
     // MOSTRA L'OBJECTE ASSOCIAT A CADA PLAYER
-    console.log(humanNamePlayer);
-    console.log(player1.nom);
-    console.log(player2.nom);
-    console.log(player3.nom);
-    console.log(player4.nom);
-    console.log(player5.nom);
-    console.log(player6.nom);
-    console.log(player7.nom);
+    //console.log(humanNamePlayer);
+    //console.log(player1.nom);
+    //console.log(player2.nom);
+    //console.log(player3.nom);
+    //console.log(player4.nom);
+    //console.log(player5.nom);
+    //console.log(player6.nom);
+    //console.log(player7.nom);
 
     document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
     document.getElementById('score').innerHTML = `SCORE: ${score}`;
@@ -2100,11 +2100,11 @@ function quarts(){
     
     	
 
-    console.log(nomUsuari);
-    console.log(player1.nom);
-    console.log(player1.pregunta1);
-    console.log(player1.resposta1);
-    console.log(player1.resposta1.length);
+    //console.log(nomUsuari);
+    //console.log(player1.nom);
+    //console.log(player1.pregunta1);
+    //console.log(player1.resposta1);
+    //console.log(player1.resposta1.length);
 
     //FEM ARRAY AMB LES 3 POSSIBILITATS DE PREGUNTA, RESPOSTA I CORRECTE, I LI ASSIGNEM UN RANDOM ALEATORI PER ANAR CANVIANT LES COMBINACIONS DE PREGUNTES
 
@@ -2112,14 +2112,14 @@ function quarts(){
     totesLesRespostes = [player1.resposta1, player1.resposta2, player1.resposta3];
     totesLesCorrectes = [player1.respostacorrecte1, player1.respostacorrecte2, player1.respostacorrecte3];
     aleatori= Math.round(Math.random()*2); //NUMERO ALEATORI ENTRE 0 I 2 (INCLOSOS)
-    console.log(aleatori);
+    //console.log(aleatori);
     preguntaAleatoria=totesLesPreguntes[aleatori];
     respostaAleatoria = totesLesRespostes[aleatori];
     correcteAleatoria = totesLesCorrectes[aleatori];
 
-    console.log(preguntaAleatoria);
-    console.log(respostaAleatoria);
-    console.log(correcteAleatoria);
+    //console.log(preguntaAleatoria);
+    //console.log(respostaAleatoria);
+    //console.log(correcteAleatoria);
     
 
     //alert('quarts');
@@ -2176,7 +2176,7 @@ function quarts(){
     }else{
         
         let respostes1Barrejades = respostaAleatoria.sort((a, b) => 0.5 - Math.random());
-        console.log(respostes1Barrejades);
+        //console.log(respostes1Barrejades);
         document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
         document.getElementById('score').innerHTML = `SCORE: ${score}`;
         document.getElementById('content').innerHTML = `
@@ -2226,8 +2226,8 @@ function checkAnswerQuarts(){
 
     resposta = document.getElementById('resposta').value;
     resposta = resposta.toLowerCase();
-    console.log(resposta);
-    console.log(correcteAleatoria);
+    //console.log(resposta);
+    //console.log(correcteAleatoria);
     if(resposta == correcteAleatoria){
         score +=100;
         //alert('CORRECTE');
@@ -2243,9 +2243,9 @@ function checkAnswerQuarts(){
 
 function checkMultiAnswerQuarts(id){
 
-    console.log(id.value);
-    console.log(id);
-    console.log(correcteAleatoria);
+    //console.log(id.value);
+    //console.log(id);
+    //console.log(correcteAleatoria);
     if(id.value === correcteAleatoria){
         score +=100;
         //alert('CORRECTE');
@@ -2420,14 +2420,14 @@ function semifinals(){
     totesLesRespostes = [player2.resposta1, player2.resposta2, player2.resposta3];
     totesLesCorrectes = [player2.respostacorrecte1, player2.respostacorrecte2, player2.respostacorrecte3];
     aleatori= Math.round(Math.random()*2); //NUMERO ALEATORI ENTRE 0 I 2 (INCLOSOS)
-    console.log(aleatori);
+    //console.log(aleatori);
     preguntaAleatoria=totesLesPreguntes[aleatori];
     respostaAleatoria = totesLesRespostes[aleatori];
     correcteAleatoria = totesLesCorrectes[aleatori];
 
-    console.log(preguntaAleatoria);
-    console.log(respostaAleatoria);
-    console.log(correcteAleatoria);
+    //console.log(preguntaAleatoria);
+    //console.log(respostaAleatoria);
+    //console.log(correcteAleatoria);
     
 
     //alert('quarts');
@@ -2483,7 +2483,7 @@ function semifinals(){
     }else{
         
         let respostes1Barrejades = respostaAleatoria.sort((a, b) => 0.5 - Math.random());
-        console.log(respostes1Barrejades);
+        //console.log(respostes1Barrejades);
         document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
         document.getElementById('score').innerHTML = `SCORE: ${score}`;
         document.getElementById('content').innerHTML = `
@@ -2532,8 +2532,8 @@ function checkAnswerSemifinals(){
 
     resposta = document.getElementById('resposta').value;
     resposta = resposta.toLowerCase();
-    console.log(resposta);
-    console.log(correcteAleatoria);
+    //console.log(resposta);
+    //console.log(correcteAleatoria);
     if(resposta == correcteAleatoria){
         score +=250;
         //alert('CORRECTE. Cap a la final!');
@@ -2549,9 +2549,9 @@ function checkAnswerSemifinals(){
 
 function checkMultiAnswerSemifinals(id){
 
-    console.log(id.value);
-    console.log(id);
-    console.log(correcteAleatoria);
+    //console.log(id.value);
+    //console.log(id);
+    //console.log(correcteAleatoria);
     if(id.value === correcteAleatoria){
         score +=250;
         //alert('CORRECTE. Cap a la final!');
@@ -2701,14 +2701,14 @@ function final(){
     totesLesRespostes = [player6.resposta1, player6.resposta2, player6.resposta3];
     totesLesCorrectes = [player6.respostacorrecte1, player6.respostacorrecte2, player6.respostacorrecte3];
     aleatori= Math.round(Math.random()*2); //NUMERO ALEATORI ENTRE 0 I 2 (INCLOSOS)
-    console.log(aleatori);
+    //console.log(aleatori);
     preguntaAleatoria=totesLesPreguntes[aleatori];
     respostaAleatoria = totesLesRespostes[aleatori];
     correcteAleatoria = totesLesCorrectes[aleatori];
 
-    console.log(preguntaAleatoria);
-    console.log(respostaAleatoria);
-    console.log(correcteAleatoria);
+    //console.log(preguntaAleatoria);
+    //console.log(respostaAleatoria);
+    //console.log(correcteAleatoria);
     
 
     //alert('quarts');
@@ -2770,7 +2770,7 @@ function final(){
     }else{
         
         let respostes1Barrejades = respostaAleatoria.sort((a, b) => 0.5 - Math.random());
-        console.log(respostes1Barrejades);
+        //console.log(respostes1Barrejades);
         document.getElementById('level').innerHTML = ` LEVEL ${level}/5 `;
         document.getElementById('score').innerHTML = `SCORE: ${score}`;
         document.getElementById('content').innerHTML = `
@@ -2824,14 +2824,14 @@ function checkAnswerFinal(){
 
     resposta = document.getElementById('resposta').value;
     resposta = resposta.toLowerCase();
-    console.log(resposta);
-    console.log(correcteAleatoria);
+    //console.log(resposta);
+    //console.log(correcteAleatoria);
     if(resposta == correcteAleatoria){
         score +=500;
 	if(level<5){
         campio();
 	}else{
-	console.log('campio total')
+	//console.log('campio total')
 	campioTotal();
 	}
     }else{
@@ -2845,9 +2845,9 @@ function checkAnswerFinal(){
 
 function checkMultiAnswerFinal(id){
 
-    console.log(id.value);
-    console.log(id);
-    console.log(correcteAleatoria);
+    //console.log(id.value);
+    //console.log(id);
+    //console.log(correcteAleatoria);
     if(id.value === correcteAleatoria){
         score +=500;
 	if(level<5){
@@ -2947,7 +2947,7 @@ function campio(){
 }
 
 function campioTotal(){
-	console.log('campio total');
+	//console.log('campio total');
 	getTimeClock();
 	saveScore();
         stopClock(); 
@@ -3005,7 +3005,7 @@ function campioTotal(){
 function pujarNivell(){
     //alert('pujar nivell');
     nameAvatar = infoUsuari.avatar;
-    console.log(nameAvatar);
+    //console.log(nameAvatar);
 
     	switch(level){
             case 1:
@@ -3078,7 +3078,7 @@ function getTimeClock(){
 	let l = document.getElementById("counter");
 	l.innerHTML = `${'Time: '}` + cronometre;
 	tempsFinal = cronometre;
-	console.log(tempsFinal);
+	//consol.log(tempsFinal);
     secondsToMinutes(tempsFinal);
 
 }
@@ -3089,7 +3089,7 @@ function secondsToMinutes(){
     seconds = tempsFinal % 60;
     seconds = ("0" + seconds).slice(-2);
     minutesAndSeconds = minutes + ':' + seconds;
-    console.log(minutesAndSeconds)
+    //consol.log(minutesAndSeconds)
 
 }
 
@@ -3128,14 +3128,14 @@ function saveScore(){
     //const lastname = "Ferrer";
     //const dict_values = {firstname, lastname} //Pass the javascript variables to a dictionary.  NO CAL//
     scoresBBDD = JSON.stringify(finalScore); // Stringify converts a JavaScript object or value to a JSON string
-    console.log(scoresBBDD); // Prints the variables to console window, which are in the JSON format
+    //consol.log(scoresBBDD); // Prints the variables to //consol window, which are in the JSON format
     //alert(scoresBBDD)
     $.ajax({
         url:"/setBBDD",
         type:"POST",
         contentType: "application/json",
         data: JSON.stringify(scoresBBDD)}); 
-        console.log(scoresBBDD);
+        //consol.log(scoresBBDD);
         //alert(scoresBBDD);
 
     // GUARDA L'SCORE FINAL AL LOCAL STORAGE
@@ -3172,14 +3172,14 @@ function saveScoreAndGoLanding(){
     //const lastname = "Ferrer";
     //const dict_values = {firstname, lastname} //Pass the javascript variables to a dictionary.  NO CAL//
     scoresBBDD = JSON.stringify(finalScore); // Stringify converts a JavaScript object or value to a JSON string
-    console.log(scoresBBDD); // Prints the variables to console window, which are in the JSON format
+    //console.log(scoresBBDD); // Prints the variables to console window, which are in the JSON format
     //alert(scoresBBDD)
     $.ajax({
         url:"/setBBDD",
         type:"POST",
         contentType: "application/json",
         data: JSON.stringify(scoresBBDD)}); 
-        console.log(scoresBBDD);
+        //console.log(scoresBBDD);
         //alert(scoresBBDD);
 
     // GUARDA L'SCORE FINAL AL LOCAL STORAGE
@@ -3217,14 +3217,14 @@ function saveScoreAndGofullScores(){
     //const lastname = "Ferrer";
     //const dict_values = {firstname, lastname} //Pass the javascript variables to a dictionary.  NO CAL//
     scoresBBDD = JSON.stringify(finalScore); // Stringify converts a JavaScript object or value to a JSON string
-    console.log(scoresBBDD); // Prints the variables to console window, which are in the JSON format
+    //console.log(scoresBBDD); // Prints the variables to console window, which are in the JSON format
     //alert(scoresBBDD)
     $.ajax({
         url:"/setBBDD",
         type:"POST",
         contentType: "application/json",
         data: JSON.stringify(scoresBBDD)}); 
-        console.log(scoresBBDD);
+        //console.log(scoresBBDD);
         //alert(scoresBBDD);
 
     // GUARDA L'SCORE FINAL AL LOCAL STORAGE
