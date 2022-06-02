@@ -21,7 +21,7 @@ def connectDatabase():
 
 @app.route('/')
 def index():
-    #try:     
+    try:     
         #getBBDDlanding()
         #getBBDDfullscores()
         con=connectDatabase()
@@ -64,7 +64,7 @@ def index():
         
         return render_template('index.html', allScores=allScores)
     
-    #except:
+    except:
         return render_template('404.html')
 
 
