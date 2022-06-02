@@ -1142,7 +1142,7 @@ function fullScores(){
     allScores = document.getElementById('allScores').getAttribute("value");
 
     // AQUÍ, A MÉS DE CONVERTIR-SE EN OBJECTE JSON, LI CANVIEM EL NOM A ALLSCORES PER DIR-SE SCORESLIST, QUE ÉS EL NOM DEFINIT PER AIXÒ DES DEL PRINCIPI, AMB LOCAL STORAGE
-    scoresList=JSON.parse(allScores);
+    //scoresList=JSON.parse(allScores);
     lenScoresList = scoresList.length;
 
     let contingut = document.getElementById('content');
@@ -1240,7 +1240,7 @@ function fullScores(){
 
                 <div class="d-grid gap-2">
                     <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                        <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
+                        <img src='static/img/signomas.png' height="20px" onclick="addfullScores(lenScoresList)">
                     </div>
                 </div>
                 `
@@ -1377,7 +1377,7 @@ function fullScores(){
 
                 <div class="d-grid gap-2">
                     <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                        <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
+                        <img src='static/img/signomas.png' height="20px" onclick="addfullScores(lenScoresList)">
                     </div>
                 </div>
                 `
@@ -1720,7 +1720,7 @@ function fullScores(){
 
 
 
-function addfullScores(scoresList){
+function addfullScores(lenScoresList){
     $("#loader").fadeIn("fast");
 
     //console.log(scoresList);
@@ -1808,7 +1808,7 @@ function addfullScores(scoresList){
 
                 <div class="d-grid gap-2">
                     <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                        <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
+                        <img src='static/img/signomas.png' height="20px" onclick="addfullScores(lenScoresList)">
                     </div>
                 </div>
                 `
@@ -1880,8 +1880,8 @@ function addfullScores(scoresList){
 
 
                 for(let i = 0; i < comptador; i++){
-                    console.log(position);
-                    console.log(comptador)
+                    //console.log(position);
+                    //console.log(comptador);
                     
                     if(scoresList[i]==undefined){
                         break;
@@ -1945,8 +1945,10 @@ function addfullScores(scoresList){
                 }
                 
                 contingut.innerHTML += nouContingut;
-
-                if(position >= scoresList.length){
+                console.log(position);
+                console.log(scoresList.length);
+                console.log(comptador)
+                if(position >= lenScoresList){
                     $("#loader").fadeOut("fast");
                     return;
                 }
@@ -1955,7 +1957,7 @@ function addfullScores(scoresList){
 
                 <div class="d-grid gap-2">
                     <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
-                        <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
+                        <img src='static/img/signomas.png' height="20px" onclick="addfullScores(lenScoresList)">
                     </div>
                 </div>
                 `
