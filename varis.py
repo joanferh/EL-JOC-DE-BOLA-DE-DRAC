@@ -579,3 +579,273 @@ onclick="window.location.href='/'"
 
 
 document.getElementById('formTask').addEventListener('submit', saveTask);
+
+
+
+
+
+FUNCIÓ SENSE AJAX
+function addfullScores(scoresList){
+    $("#loader").fadeIn("fast");
+
+    //console.log(scoresList);
+    //console.log(position);
+
+    score=0;
+    comptador += 50;
+
+    let contingut = document.getElementById('content');
+
+
+    document.getElementById('title').innerHTML = ` 
+    <div class="container">
+        <div style="margin-left: auto; margin-right: auto; padding-top:20px;  padding-bottom:10px; float:center;"><h3>ALL SCORES: 1 - ${comptador} de ${lenScoresList}</h3> </div>
+    </div>
+    `
+
+
+
+
+    // RECUPEREM LES DADES
+    // ALLSCORES VE DE PHPMYADMIN, PER FER LA CLASSIFICACIÓ GLOBAL DE TOTS ELS JUGADORS. EL SELECT ES RECULL A RUN.PY, ES PASSA A INDEX.HTML AMB RENDER TEMPLATE,
+    // SE LI DONA FORMAT JSON, I ES PASSA A APP.JS AMB UN ID DE LABEL BUIT. UN COP A APP.JS, L'STRING ES CONVERTEIX A OBJECTE AMB JSON.PARSE
+    /*
+    allScores = document.getElementById('allScores').getAttribute("value");
+    console.log(allScores)
+    console.log(typeof allScores)
+
+    // AQUÍ, A MÉS DE CONVERTIR-SE EN OBJECTE JSON, LI CANVIEM EL NOM A ALLSCORES PER DIR-SE SCORESLIST, QUE ÉS EL NOM DEFINIT PER AIXÒ DES DEL PRINCIPI, AMB LOCAL STORAGE
+    scoresList=JSON.parse(allScores)
+    console.log(scoresList)
+    console.log(typeof scoresList)
+
+
+    console.log(scoresList);
+
+
+     /////////////////////////////////// OBJECTIU: COLOREJAR ELS MEUS RESULTATS A LA LLISTA GENERAL///////////////////
+    
+    // RECUPEREM ELS SCORES DEL LOCAL STORAGE, ÉS A DIR, MY SCORES
+    scoresListLocalStorage =  JSON.parse(localStorage.getItem('scoresList'));
+
+    scoresList.sort ((a, b) => {
+        // Comparamos la propiedad puntuacio de scoresList.
+      
+        if (a.puntuacio < b.puntuacio) return 1;
+        if (a.puntuacio  > b.puntuacio ) return -1;
+        else {
+          // Si la propiedad puntuacio de scoresList es igual, ordenar por tiempo.
+      
+          if (a.seconds > b.seconds) return 1;
+          else if (a.seconds < b.seconds) return -1;
+          return 0;
+        }
+    })
+
+    console.log(scoresList);
+    console.log(scoresListLocalStorage);*/
+
+    // SI SCORESLISTLOCALSTORAGE ESTÀ BUIT, ÉS A DIR, ÉS NULL, IMPRIMIM LA LLISTA SENSE COLOREJAR, NOMÉS AGAFANT LA BBDD DE SCORSELIST
+
+    let nouContingut = '';
+
+    if(scoresListLocalStorage === null){
+        //console.log(position);
+        for(let i = position; i < comptador; i++){
+            if(scoresList[i]==undefined){
+                break;
+            }
+            //console.log(tasks[i])
+            position = i+1;
+            let avatar = scoresList[i].avatar;
+            let nom = scoresList[i].nom;
+            let puntuacio = scoresList[i].puntuacio;
+            let seconds = scoresList[i].seconds;
+            let time = scoresList[i].time;
+            //console.log(avatar);
+            
+        
+            
+            nouContingut +=`
+            <div class="container">
+                <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
+                    <div class= "card" style="height: 4rem; width: 40rem;">
+                        <table class='table table-hover'>
+                            <tbody style='text-align: center;'>
+                                <tr>
+                                    <td align='center' style="width:17%"><h3>${position}</h3></td>
+                                    <td align='center' style="width:9%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
+                                    <td align='center' style="width:29%"><h5>${nom}</h5></td>
+                                    <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
+                                    <td align='center' style="width:24%"><h5>${time}</h5></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>`
+        }
+
+        contingut.innerHTML += nouContingut;
+
+        if(position >= scoresList.length){
+            $("#loader").fadeOut("fast");
+            return;
+        }
+        contingut.innerHTML +=`
+
+        <div class="d-grid gap-2">
+            <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
+                <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
+            </div>
+        </div>
+        `
+
+        $("#loader").fadeOut("fast"); // FEM SORTIR L'EFECTE LOADER AMB JQUERY
+        
+    }else{
+
+        // TANT A SCORELIST COM A SCORELISTLOCALSTORAGE LI AFEGIM LA PROPIETAT REPE:FALSE
+        /*
+        for(let i = 0; i < scoresList.length; i++){
+            scoresList[i].repe=false;    
+        }
+        console.log(scoresList);
+
+        for(let j = 0; j < scoresListLocalStorage.length; j++){
+            scoresListLocalStorage[j].repe=false;
+        }
+
+        console.log(scoresListLocalStorage);
+
+
+        //AGAFEM ELS VALORS DELS DOS OBJECTES
+
+        let valuesAllScores = Object.values(scoresList);
+        let valuesMyScores = Object.values(scoresListLocalStorage);
+        //console.log(valuesAllScores[0]);
+        //console.log(valuesMyScores[0]);
+
+        // FEM DOS BUCLES PER TROBAR LES COINCIDENCIES ALS OBJECTES. QUAN HI HA UNA COINCIDÈNCIA, CANVIEM LA PROPIETAT REPE A TRUE
+
+        for(let i = 0; i < scoresList.length; i++){
+            for(let j=0; j<scoresListLocalStorage.length; j++){
+                //console.log(valuesAllScores[i]);
+                //console.log(valuesMyScores[j]);
+                if(JSON.stringify(valuesAllScores[i])===JSON.stringify(valuesMyScores[j])){
+                    scoresList[i].repe=true;
+                    console.log(scoresList[i]);
+
+                    console.log('repetits');
+                    //console.log(JSON.stringify(valuesAllScores[i]));
+                    //console.log(JSON.stringify(valuesMyScores[j]));
+                }
+            }
+            
+        }
+        console.log(scoresList); 
+
+        // ORDENENEM PER PUNTUACIÓ I, SI CAL, PER TEMPS
+
+        scoresList.sort ((a, b) => {
+            // Comparamos la propiedad puntuacio de scoresList.
+        
+            if (a.puntuacio < b.puntuacio) return 1;
+            if (a.puntuacio  > b.puntuacio ) return -1;
+            else {
+            // Si la propiedad puntuacio de scoresList es igual, ordenar por tiempo.
+        
+            if (a.seconds > b.seconds) return 1;
+            else if (a.seconds < b.seconds) return -1;
+            return 0;
+            }
+        })
+
+        // FINALMENT, ASSIGNEM VARIABLES A LES PROPIETATS DE SCORESLIST. SI REPE:TRUE, LI POSEM VERMELL DE BACKGROUND COLOR. SI ELSE (REPE:FALSE), EL DEIXEM EN BLANC
+        */
+        let nouContingut = '';
+
+        for(let i = position; i < comptador; i++){
+            //console.log(position);
+            
+            if(scoresList[i]==undefined){
+                break;
+            }
+
+            //console.log(tasks[i])
+            position = i+1;
+            let avatar = scoresList[i].avatar;
+            let nom = scoresList[i].nom;
+            let puntuacio = scoresList[i].puntuacio;
+            let seconds = scoresList[i].seconds;
+            let time = scoresList[i].time;
+            //console.log(avatar);
+
+            //console.log(clave);
+            if(scoresList[i].repe === true){
+                //console.log(scoresList[i]);
+                //console.log('repe es true');
+                nouContingut +=`
+                    <div class="container">
+                        <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
+                            <div class= "card" style="height: 4rem; width: 40rem;">
+                                <table class='table table-hover'>
+                                    <tbody style='text-align: center; background-color:#FCBEB1;'>
+                                        <tr>
+                                            <td align='center' style="width:17%"><h3>${position}</h3></td>
+                                            <td align='center' style="width:9%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
+                                            <td align='center' style="width:29%"><h5>${nom}</h5></td>
+                                            <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
+                                            <td align='center' style="width:24%"><h5>${time}</h5></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>`
+
+            }else{
+                //console.log('repe es fals')  
+                nouContingut +=`
+                <div class="container">
+                    <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
+                        <div class= "card" style="height: 4rem; width: 40rem;">
+                            <table class='table table-hover'>
+                                <tbody style='text-align: center;'>
+                                    <tr>
+                                        <td align='center' style="width:17%"><h3>${position}</h3></td>
+                                        <td align='center' style="width:9%"><h5><img src='static/img/${avatar}.png' height='35px'</h5></td>
+                                        <td align='center' style="width:29%"><h5>${nom}</h5></td>
+                                        <td align='center' style="width:21%"><h4>${puntuacio}</h4></td>
+                                        <td align='center' style="width:24%"><h5>${time}</h5></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>`
+
+            }
+        }
+        
+        contingut.innerHTML += nouContingut;
+
+        if(position >= scoresList.length){
+            $("#loader").fadeOut("fast");
+            return;
+        }
+
+        contingut.innerHTML +=`
+
+        <div class="d-grid gap-2">
+            <div style="margin-left: auto; margin-right: auto; padding: 1em ;">
+                <img src='static/img/signomas.png' height="20px" onclick="addfullScores(scoresList)">
+            </div>
+        </div>
+        `
+
+        $("#loader").fadeOut("fast");
+    }
+}
+
+
