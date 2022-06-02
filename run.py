@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
 
 def connectDatabase():
-    '''return pymysql.connect(host='yahabla.mysql.pythonanywhere-services.com', user = 'yahabla', password = 'L4yY5lt9Qu', database = 'yahabla$elgrantorneig')'''
+    return pymysql.connect(host='yahabla.mysql.pythonanywhere-services.com', user = 'yahabla', password = 'L4yY5lt9Qu', database = 'yahabla$elgrantorneig')
     return pymysql.connect(host='localhost', user = 'root', password = '', database = 'boladedrac')
     return pymysql.connect(host='sql11.freemysqlhosting.net', user = 'sql11484420', password = 'L4yY5lt9Qu', database = 'sql11484420')
 
